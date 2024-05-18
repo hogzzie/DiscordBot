@@ -1,6 +1,6 @@
 async function viewMembers() {
     try {
-        const response = await fetch('https://YOUR_GITHUB_PAGES_URL/view-members');
+        const response = await fetch('https://hogzzie.github.io/DiscordBot/view-members');
         if (!response.ok) throw new Error(`Error: ${response.statusText}`);
         const data = await response.json();
         document.getElementById('output').innerText = JSON.stringify(data, null, 2);
@@ -13,7 +13,7 @@ async function viewMembers() {
 async function banMember() {
     try {
         const memberId = prompt('Enter the member ID to ban:');
-        const response = await fetch('https://YOUR_GITHUB_PAGES_URL/ban-member', {
+        const response = await fetch('https://hogzzie.github.io/DiscordBot/ban-member', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ memberId })
@@ -30,7 +30,7 @@ async function banMember() {
 async function muteMember() {
     try {
         const memberId = prompt('Enter the member ID to mute:');
-        const response = await fetch('https://YOUR_GITHUB_PAGES_URL/mute-member', {
+        const response = await fetch('https://hogzzie.github.io/DiscordBot/mute-member', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ memberId })
@@ -47,7 +47,7 @@ async function muteMember() {
 async function writeAnnouncement() {
     try {
         const announcement = prompt('Enter your announcement:');
-        const response = await fetch('https://YOUR_GITHUB_PAGES_URL/write-announcement', {
+        const response = await fetch('https://hogzzie.github.io/DiscordBot/write-announcement', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ announcement })
